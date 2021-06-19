@@ -1,0 +1,15 @@
+const express = require('express')
+const router = new express.Router()
+const {getPressWiseShift,getPressWiseTotal,getPressWiseShiftAllPress,getPressWiseTotalAllPress} = require('../../../controller/reporting/tbl/pressWiseController')
+
+router.get('/presswise/shift/:condition/:paramDate/:paramDateTwo/:shift/:type',getPressWiseShift)
+router.get('/presswise/total/:condition/:paramDate/:paramDateTwo/:type',getPressWiseTotal)
+router.get('/presswise/shiftAll/:condition/:paramDate/:paramDateTwo/:shift/:type',getPressWiseShiftAllPress)
+router.get('/presswise/totalAll/:condition/:paramDate/:paramDateTwo/:type',getPressWiseTotalAllPress)
+// router.post('/mom',insertMom)
+// router.post('/mom/update/:id',updateMom)
+// router.get('/mom/:id',getOneMom)
+// router.delete('/mom/:id/delete',deleteMom)
+// router.post('/mom/sucess',getSucess)
+// router.get('/mom/sucess/:dateOne/:dateTwo',getAllSucess)
+module.exports = router

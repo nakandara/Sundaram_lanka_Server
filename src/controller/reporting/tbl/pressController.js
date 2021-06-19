@@ -26,8 +26,8 @@ exports.insertSn = async (req, res) => {
   
     try {
       const results = await db.query(
-        "INSERT INTO std.press_new_data (sn,press_no,shift,tyre_type,date,weight,load_time) values ( $1, $2,$3,$4,$5,$6,$7) returning *",
-        [req.body.sn, req.body.press_no, req.body.shift, req.body.tyre_type,req.body.date,req.body.weight,req.body.load_time]
+        "INSERT INTO std.press_new_data (sn,press_no,shift,tyre_type,date,weight,load_time,time_gap) values ( $1, $2,$3,$4,$5,$6,$7,$8) returning *",
+        [req.body.sn, req.body.press_no, req.body.shift, req.body.tyre_type,req.body.date,req.body.weight,req.body.load_time,req.body.time_gap]
       );
       console.log(results);
       res.status(201).json({
@@ -145,8 +145,8 @@ exports.insertSn = async (req, res) => {
 exports.updateSn = async (req, res) => {
   try {
     const results = await db.query(
-      "UPDATE std.press_new_data SET  sn = $1, press_no = $2,shift=$3 ,tyre_type=$4 ,load_time=$5 where sn = $6 ",
-      [req.body.sn,req.body.press_no,req.body.shift,req.body.tyre_type,req.body.load_time,req.params.sn]
+      "UPDATE std.press_new_data SET  sn = $1, press_no = $2,shift=$3 ,tyre_type=$4 ,load_time=$5,time_gap=$6 where sn = $7 ",
+      [req.body.sn,req.body.press_no,req.body.shift,req.body.tyre_type,req.body.load_time,req.body.time_gap,req.params.sn]
     );
 
     res.status(200).json({
