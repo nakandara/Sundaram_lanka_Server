@@ -64,6 +64,8 @@ const pressbuilderdetail = require('./routers/reporting/tbl/builderPressRouter')
 
 const presswiselinereport =require('./routers/reporting/tbl/pressWiseRouter')
 
+
+const presswiseline =require('./routers/reporting/tbl/pressOtherRouter')
 //------Bandara------------
 // const snDetailRouter = require('./routers/detailsFrmParams/snRouter')
 // const specRouter = require('./routers/tbls/specTblRouter')
@@ -154,6 +156,7 @@ app.use('/machinecost',machineCost)
 app.use('/presswiseline',presswiselinereport)
 
 
+app.use('/presswiselinedata',presswiseline)
 
 //----------Bandara----------
 // app.use(snDetailRouter) 
