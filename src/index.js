@@ -17,6 +17,13 @@ const mixing = require('./routers/reporting/tbl/mixingRouter')
 const eng = require('./routers/reporting/tbl/engRouter')
 const hold = require('./routers/reporting/tbl/holdRouter')
 const machineCost = require('./routers/reporting/tbl/machineCostRouter')
+//------pramod----------
+const fgs = require('./routers/reporting/tbl/fgsRouter')
+const shotblasting = require('./routers/reporting/tbl/shotBlastingRouter')
+
+// pramod rccm
+
+const fgsaccuracyrccm  =require('./routers/reporting/tbl/fgsaccuracyrccmRoute')
 
 //----------------rccm--------------
 
@@ -104,7 +111,10 @@ app.use('/reporting',bead)
 app.use('/reporting',mixing)
 app.use('/reporting',eng)
 app.use('/reporting',hold)
-
+// --------------- pramod----
+app.use('/reporting',fgs)
+app.use('/reporting',shotblasting)
+app.use('/reporting',fgsaccuracyrccm)
 
 //--------rccm----------------
 app.use('/reporting',productionrccm)
@@ -115,6 +125,7 @@ app.use('/reporting',mixingrccm)
 app.use('/reporting',engrccm)
 app.use('/reporting',holdrccm)
 app.use('/reporting',qualityrccm)
+
 
 //////////////
 
